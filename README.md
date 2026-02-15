@@ -21,6 +21,12 @@ This pipeline fuses the precision of a Velodyne HDL-64 LiDAR with RGB imagery to
 * **Perspective Projection:** Projects 3D points onto the 2D image plane using intrinsic ($K$) and extrinsic ($T$) matrices.
 * **Color Extraction:** Maps RGB values to LiDAR points by normalizing homogeneous coordinates ($u = X/Z, v = Y/Z$).
 
+<p align="center">
+  <img src="Camera_Lidar_Reconstruction.png" width="800" alt="LiDAR-Camera Fusion Result"/>
+  <br>
+  <i>Figure 1: Global 3D reconstruction using LiDAR-Camera fusion. Note the high metric precision on the road surface.</i>
+</p>
+
 
 
 ### 2. Stereo Vision Reconstruction (SGBM)
@@ -29,6 +35,11 @@ A purely vision-based approach using two synchronized cameras to estimate depth 
 * **Triangulation:** Conversion of disparity to depth using the camera baseline ($B = 0.54m$) and focal length ($f$).
 * **Post-Processing:** Statistical outlier removal via **Open3D** to eliminate "ghost" points and artifacts common in stereo matching.
 
+<p align="center">
+  <img src="StereoVision_Reconstruction.png" width="800" alt="Stereo Vision Reconstruction Result"/>
+  <br>
+  <i>Figure 2: Dense point cloud from Stereo SGBM. Note the reconstruction of trees and vertical structures.</i>
+</p>
 
 
 ---
