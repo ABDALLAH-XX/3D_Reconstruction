@@ -22,7 +22,7 @@ This pipeline fuses the precision of a Velodyne HDL-64 LiDAR with RGB imagery to
 * **Color Extraction:** Maps RGB values to LiDAR points by normalizing homogeneous coordinates ($u = X/Z, v = Y/Z$).
 
 <p align="center">
-  <img src="Camera_Lidar_Reconstruction.png" width="800" alt="LiDAR-Camera Fusion Result"/>
+  <img src="results/Camera_Lidar_Reconstruction.png" width="800" alt="LiDAR-Camera Fusion Result"/>
   <br>
   <i>Figure 1: Global 3D reconstruction using LiDAR-Camera fusion. Note the high metric precision on the road surface.</i>
 </p>
@@ -36,7 +36,7 @@ A purely vision-based approach using two synchronized cameras to estimate depth 
 * **Post-Processing:** Statistical outlier removal via **Open3D** to eliminate "ghost" points and artifacts common in stereo matching.
 
 <p align="center">
-  <img src="StereoVision_Reconstruction.png" width="800" alt="Stereo Vision Reconstruction Result"/>
+  <img src="results/StereoVision_Reconstruction.png" width="800" alt="Stereo Vision Reconstruction Result"/>
   <br>
   <i>Figure 2: Dense point cloud from Stereo SGBM. Note the reconstruction of trees and vertical structures.</i>
 </p>
@@ -54,10 +54,9 @@ A fundamental trade-off was identified during this project:
 ---
 
 ## 📁 Project Structure
-- `kitti_global_mapper.py`: Core logic for LiDAR-Camera fusion and global mapping.
-- `kitti_stereo_reconstruction.py`: Stereo matching pipeline and Open3D post-processing.
-- `calibration/`: Utilities to parse KITTI extrinsic and intrinsic matrices.
-- `output/`: Sample `.ply` and `.pcd` files for visualization in CloudCompare or MeshLab.
+- `src/`: Python source files for both reconstruction methods.
+- `results/`: Output images and generated point clouds (`.ply`, `.pcd`, `.png`).
+- `KITTI_SAMPLE/`: (Local only) KITTI raw dataset directory.
 
 ## 🛠️ Tech Stack
 * **Language:** Python 3.x

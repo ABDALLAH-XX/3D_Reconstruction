@@ -109,5 +109,5 @@ pcd.colors = o3d.utility.Vector3dVector(combined_colors)
 pcd, _ = pcd.remove_statistical_outlier(nb_neighbors=20, std_ratio=2.0)
 
 # Save result
-o3d.io.write_point_cloud("stereo_reconstruction.pcd", pcd)
+o3d.io.write_point_cloud("results/stereo_reconstruction2.pcd", pcd)
 print("File stereo_reconstruction.pcd successfully saved.")

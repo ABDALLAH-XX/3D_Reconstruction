@@ -96,7 +96,7 @@ ply_element = ply.PlyElement.describe(vertex, 'vertex')
 # Write the PLY file
 print(f"Total points in reconstructed point cloud: {len(vertex)}")
 print(f"Saving reconstructed point cloud to 'reconstructed_point_cloud.ply'...")
-ply.PlyData([ply_element], text=True).write('/data/reconstructed_point_cloud.ply')
+ply.PlyData([ply_element], text=True).write('results/reconstructed_point_cloud2.ply')
 print("Reconstruction complete.")
 
 
